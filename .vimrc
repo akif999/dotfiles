@@ -1,5 +1,7 @@
 " Configuration file for vim
 set modelines=0		" CVE-2007-2438
+set fileformats=unix,dos
+scriptencoding utf-8
 
 " Normally we use vim-extensions. If you want true vi-compatibility
 " remove change the following statements
@@ -20,6 +22,19 @@ set expandtab
 set nowrap
 set number
 set visualbell t_vb=
+
+" Keybind
+nmap <ESC><ESC> :nohlsearch<cr>
+
+nmap <DOWN>  :cnext<cr>
+nmap <UP>    :cprev<cr>
+nmap <LEFT>  :colder<cr>
+nmap <RIGHT> :cnewer<cr>
+
+nmap <A-LEFT>  :diffget<cr>
+nmap <A-RIGHT> :diffput<cr>
+nmap <A-DOWN>  ]c
+nmap <A-UP>    [c
 
 " Highlight endspace
 augroup HighlightTrailingSpaces
