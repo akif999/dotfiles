@@ -1,27 +1,31 @@
-" Configuration file for vim
-set modelines=0		" CVE-2007-2438
-set fileformats=unix,dos
+" vimrc "
+
+" Encoding, format "
+set encoding=utf-8
+set fileencodings=utf-8,euc-jp,cp932
 scriptencoding utf-8
+set fileformat=unix
 
-" Normally we use vim-extensions. If you want true vi-compatibility
-" remove change the following statements
-set nocompatible	" Use Vim defaults instead of 100% vi compatibility
-set backspace=2		" more powerful backspacing
-
-" Don't write backup file if vim is being called by "crontab -e"
-au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
-" Don't write backup file if vim is being called by "chpass"
-au BufWrite /private/etc/pw.* set nowritebackup nobackup
-
-" Insert settings
+" Edits "
 syntax on
+
 set title
 set tabstop=4
 set softtabstop=4
 set expandtab
-set nowrap
+set shiftwidth=4
+set autoindent
+set backspace=indent,eol,start
+set showcmd
+set showmatch
 set number
-set visualbell t_vb=
+set list
+set listchars=tab:>-,extends:<
+
+" Search "
+set ignorecase
+set smartcase
+set wrapscan
 
 " Keybind
 nmap <ESC><ESC> :nohlsearch<cr>
@@ -43,8 +47,55 @@ augroup HighlightTrailingSpaces
   autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 augroup END
 
-" Font
-set guifont=Monaco:h14
+" Font "
+set guifont=Monaco:h12
 
-" ColorScheme
+" Cache "
+set directory=~/.vim/cache/swap
+set backupdir=~/.vim/cache/backup
+set undodir=~/.vim/cache/undo
+
+"
+
+" dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+  call dein#begin('~/.vim/dein')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('fatih/vim-go')
+  call dein#add('sago35/mark.vim')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('AkiraKuno/testvimplugin')
+
+  " You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+  " Required:
+  call dein#end()
+
+  " Required:
+  filetype plugin indent on
+  syntax enable
+
+  " If you want to install not installed plugins on startup.
+  "if dein#check_install()
+  "  call dein#install()
+  "endif
+
+" End dein Scripts-------------------------"
+
 colorscheme molokai
+
+" End of file
