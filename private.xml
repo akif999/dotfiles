@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<root>
+    <item>
+        <name>Private Key1</name>
+        <appendix>Change Command_L+w to DELETE</appendix>
+        <identifier>private.001</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::W, ModifierFlag::COMMAND_L,
+            KeyCode::DELETE
+        </autogen>
+    </item>
+    <item>
+        <name>Private Key2</name>
+        <appendix>Kana to Kana/Eisuu</appendix>
+        <identifier>private.002</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::JIS_KANA,
+            KeyCode::VK_JIS_TOGGLE_EISUU_KANA
+        </autogen>
+    </item>
+    <item>
+        <name>Private Key3</name>
+        <appendix>Eisuu to Command</appendix>
+        <identifier>private.003</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::JIS_EISUU,
+            KeyCode::COMMAND_L
+        </autogen>
+    </item>
+    <item>
+        <name>Private Key4</name>
+        <appendix>Yen to Backslash</appendix>
+        <identifier>private.004</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::JIS_YEN,
+            KeyCode::JIS_YEN, ModifierFlag::OPTION_L
+        </autogen>
+    </item>
+
+    <item>
+        <name>Private Key5</name>
+        <appendix>Command_L + U to Home</appendix>
+        <identifier>private.005</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::U, ModifierFlag::COMMAND_L,
+            KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L
+        </autogen>
+    </item>
+    <item>
+        <name>Private Key6</name>
+        <appendix>Command_L + P to End</appendix>
+        <identifier>private.006</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::P, ModifierFlag::COMMAND_L,
+            KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L
+        </autogen>
+    </item>
+    <item>
+        <name>Private Key7</name>
+        <appendix>Command_L + I to PageDown</appendix>
+        <identifier>private.007</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::I, ModifierFlag::COMMAND_L,
+            KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L
+        </autogen>
+    </item>
+    <item>
+        <name>Private Key8</name>
+        <appendix>Command_L + O to PageUp</appendix>
+        <identifier>private.008</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::O, ModifierFlag::COMMAND_L,
+            KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L
+        </autogen>
+    </item>
+</root>
