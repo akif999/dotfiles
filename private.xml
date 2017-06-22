@@ -2,11 +2,11 @@
 <root>
     <item>
         <name>Private Key1</name>
-        <appendix>Change Command_L+w to DELETE</appendix>
+        <appendix>Change Ctrl_L+h to DELETE</appendix>
         <identifier>private.001</identifier>
         <autogen>
             __KeyToKey__
-            KeyCode::W, ModifierFlag::COMMAND_L,
+            KeyCode::H, ModifierFlag::CONTROL_L,
             KeyCode::DELETE
         </autogen>
     </item>
@@ -43,21 +43,21 @@
 
     <item>
         <name>Private Key5</name>
-        <appendix>Command_L + U to Home</appendix>
+        <appendix>Command_L + A to Home</appendix>
         <identifier>private.005</identifier>
         <autogen>
             __KeyToKey__
-            KeyCode::U, ModifierFlag::COMMAND_L,
+            KeyCode::A, ModifierFlag::COMMAND_L,
             KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L
         </autogen>
     </item>
     <item>
         <name>Private Key6</name>
-        <appendix>Command_L + P to End</appendix>
+        <appendix>Command_L + E to End</appendix>
         <identifier>private.006</identifier>
         <autogen>
             __KeyToKey__
-            KeyCode::P, ModifierFlag::COMMAND_L,
+            KeyCode::E, ModifierFlag::COMMAND_L,
             KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L
         </autogen>
     </item>
