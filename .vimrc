@@ -1,6 +1,4 @@
-" vimrc "
-
-" Encoding, format "
+" Encoding, Format "
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,cp932
 scriptencoding utf-8
@@ -22,12 +20,15 @@ set number
 set list
 set listchars=tab:>-,extends:<
 
+" Diffopttion "
+set diffopt=filler,context:10000,vertical
+
 " Search "
 set ignorecase
 set smartcase
 set wrapscan
 
-" Keybind
+" Keybind "
 nmap <ESC><ESC> :nohlsearch<cr>
 
 nmap <DOWN>  :cnext<cr>
@@ -40,22 +41,23 @@ nmap <A-RIGHT> :diffput<cr>
 nmap <A-DOWN>  ]c
 nmap <A-UP>    [c
 
-" Highlight endspace
+nmap <F1> :Unite file_mru<cr>
+
+" Highlight endspace "
 augroup HighlightTrailingSpaces
   autocmd!
   autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
   autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 augroup END
 
-" Font "
-set guifont=Monaco:h12
-
 " Cache "
 set directory=~/.vim/cache/swap
 set backupdir=~/.vim/cache/backup
 set undodir=~/.vim/cache/undo
-
 "
+
+" vim-go "
+let g:go_fmt_command="goimports"
 
 " dein Scripts-----------------------------
 if &compatible
@@ -71,13 +73,17 @@ if &compatible
   call dein#add('Shougo/dein.vim')
 
   " Add or remove your plugins here:
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('fatih/vim-go')
-  call dein#add('sago35/mark.vim')
-  call dein#add('scrooloose/nerdtree')
+"  call dein#add('scrooloose/nerdtree')
   call dein#add('tpope/vim-fugitive')
-  call dein#add('AkiraKuno/testvimplugin')
+  call dein#add('derekwyatt/vim-scala')
+  call dein#add('rust-lang/rust.vim')
+  call dein#add('sago35/mark.vim')
+  call dein#add('zah/nim.vim')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -96,6 +102,3 @@ if &compatible
 
 " End dein Scripts-------------------------"
 
-colorscheme molokai
-
-" End of file

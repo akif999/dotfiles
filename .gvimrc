@@ -1,7 +1,4 @@
-" gvimrc "
-
 " Font "
-
 if has('win32')
     set guifont=Migu_1M:h12
     set linespace=1
@@ -9,7 +6,7 @@ if has('win32')
         set ambiwidth=auto
     endif
 elseif has('mac')
-    set guifont=Monaco:h11
+    set guifont=Migu_1M:h11
 elseif has('xfontset')
     set guifont=a14,r14,k14
 endif
@@ -27,6 +24,25 @@ set guioptions+=a
 
 " HighlightSearch (it must be defined in .gvimrc)
 set hlsearch
+
+" test wininfo remind
+let g:save_window_file = expand('~/.vimwinrec')
+augroup SaveWindow
+    autocmd!
+    autocmd VimLeavePre * call s:save_window()
+    function! s:save_window()
+        let options = [
+          \ 'set columns=' . &columns,
+          \ 'set lines=' . &lines,
+          \ 'winpos ' . getwinposx() . ' ' . getwinposy(),
+          \ ]
+        call writefile(options, g:save_window_file)
+    endfunction
+augroup END
+
+if filereadable(g:save_window_file)
+    execute 'source' g:save_window_file
+endif
 
 colorscheme molokai
 source $HOME/.vim/dein/repos/github.com/sago35/mark.vim/plugin/mark.vim
