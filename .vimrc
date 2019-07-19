@@ -21,7 +21,7 @@ set list
 set listchars=tab:>-,extends:<
 
 " Diffopttion "
-set diffopt=filler,context:10000,vertical
+set diffopt=filler,context:10000,vertical,internal
 
 " Search "
 set ignorecase
@@ -36,10 +36,11 @@ nmap <UP>    :cprev<cr>
 nmap <LEFT>  :colder<cr>
 nmap <RIGHT> :cnewer<cr>
 
-nmap <A-LEFT>  :diffget<cr>
-nmap <A-RIGHT> :diffput<cr>
+nmap <A-RIGHT>  :diffget<cr>
+nmap <A-LEFT> :diffput<cr>
 nmap <A-DOWN>  ]c
 nmap <A-UP>    [c
+nmap <A-u> :Unite file_mru buffer<cr>
 
 nmap <F1> :Unite file_mru<cr>
 
@@ -56,8 +57,11 @@ set backupdir=~/.vim/cache/backup
 set undodir=~/.vim/cache/undo
 "
 
+" formatter options
 " vim-go "
 let g:go_fmt_command="goimports"
+" rust.vim "
+let g:rustfmt_autosave=1
 
 " dein Scripts-----------------------------
 if &compatible
