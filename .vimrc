@@ -63,6 +63,9 @@ let g:go_fmt_command="goimports"
 " rust.vim "
 let g:rustfmt_autosave=1
 
+" cscope options
+set cscopequickfix=s+,c+,d+,i+,t+,e+,a+
+
 " dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
