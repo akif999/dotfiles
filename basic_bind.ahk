@@ -13,6 +13,11 @@ vk1D & d:: Send,{Blind}{PgDn}
 ; Kana/Eisuu
 vk1C:: Send,{vkF3}
 
+; Enter
+^m::
+    send, {Enter}
+return
+
 ; BackSpace
 Ctrl & h:: Send,{BackSpace}
 
@@ -22,3 +27,9 @@ vk1D & BackSpace:: Send,{Blind}{Delete}
 ; Click
 vk1D & v:: Send,{Blind}{LButton}
 vk1D & b:: Send,{Blind}{RButton}
+
+; date
+^;::
+    FormatTime,Time,,yyyyMMdd
+    Send,%Time%
+    Return
