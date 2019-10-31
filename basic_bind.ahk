@@ -25,7 +25,8 @@ Ctrl & h:: Send,{BackSpace}
 vk1D & BackSpace:: Send,{Blind}{Delete}
 
 ; Click
-vk1D & v:: Send,{Blind}{LButton}
+vk1D & v::Mouseclick,left,,,,,D
+vk1D & v up::Mouseclick,left,,,,,U
 vk1D & b:: Send,{Blind}{RButton}
 
 ; date
@@ -33,3 +34,12 @@ vk1D & b:: Send,{Blind}{RButton}
     FormatTime,Time,,yyyyMMdd
     Send,%Time%
     Return
+
+; ApplicationLaunch
+!t::
+    Run, C:\Users\aki01\work\app\cltc\cltc.exe
+    Return
+
+; AHK script edit
+vk1D & c::Run, "%USERPROFILE%\work\app\vim\gvim.exe" "%USERPROFILE%\work\src\github.com\akif999\dot-files\basic_bind.ahk"
+vk1D & r::Reload
