@@ -30,14 +30,21 @@ vk1D & v up::Mouseclick,left,,,,,U
 vk1D & b:: Send,{Blind}{RButton}
 
 ; date
-^;::
+!D::
     FormatTime,Time,,yyyyMMdd
+    Send,%Time%
+    Return
+!S::
+    FormatTime,Time,,yyyy/MM/dd
     Send,%Time%
     Return
 
 ; ApplicationLaunch
 !t::
     Run, C:\Users\aki01\work\app\cltc\cltc.exe
+    Return
+!r::
+    Run, C:\Users\aki01\work\app\rapture-2.4.0\rapture.exe
     Return
 
 ; AHK script edit
