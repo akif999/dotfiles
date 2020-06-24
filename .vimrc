@@ -56,10 +56,27 @@ nmap <A-3> :Buffers<cr>
 nmap <F1> :Unite file_mru<cr>
 
  " vim-lsp
-nnoremap <C-]> :LspDefinition<cr>
-nnoremap <M-h> :LspPeekDefinition<cr>
-nnoremap <M-n> :LspNextError<cr>
-nnoremap <M-p> :LspPreviousError<cr>
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  setlocal signcolumn=yes
+  nmap <C-]> :LspDefinition<cr>
+  nmap <M-h> :LspHover<cr>
+  nmap <M-n> :LspNextError<cr>
+  nmap <M-p> :LspPreviousError<cr>
+endfunction
+
+augroup lsp_install
+  au!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
+
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 1
+let g:asyncomplete_popup_delay = 1
+let g:lsp_text_edit_enabled = 1
 
 " Highlight endspace "
 augroup HighlightTrailingSpaces
@@ -113,7 +130,8 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 "         \ })
 " endif
 
-" fzr
+
+" fzf
 let g:fzf_preview_window=""
 
 call plug#begin('~/.vim/plugged')
@@ -136,6 +154,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-goimports'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
