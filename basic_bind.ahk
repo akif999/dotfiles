@@ -120,13 +120,15 @@ return
 
 ; year month day
 !s::
-    Formattime,Timestring,,yyyy/MM/dd
-    Send,%TimeString%
-    Return
+    IfWinActive ChildView; RemoteView
+      Formattime,Timestring,,yyyy/MM/dd
+      Send,%TimeString%
+      Return
 !y::
-    Formattime,Timestring,,yyyyMMdd
-    Send,%TimeString%
-    Return
+    IfWinActive ChildView; RemoteView
+      Formattime,Timestring,,yyyyMMdd
+      Send,%TimeString%
+      Return
 ; "http://atcserver/r/"."$Clipboard"
 sc07B & 2::
 ;    Schema := SubStr(%Clipboard%, 1, 4)

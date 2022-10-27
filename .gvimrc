@@ -21,28 +21,18 @@ set mouse=a
 set mousefocus
 set mousehide
 set guioptions+=a
+set guioptions+=k
+set guioptions-=b
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
 
 " HighlightSearch (it must be defined in .gvimrc)
 set hlsearch
 
-" test wininfo remind
-let g:save_window_file = expand('~/.vimwinrec')
-augroup SaveWindow
-    autocmd!
-    autocmd VimLeavePre * call s:save_window()
-    function! s:save_window()
-        let options = [
-          \ 'set columns=' . &columns,
-          \ 'set lines=' . &lines,
-          \ 'winpos ' . getwinposx() . ' ' . getwinposy(),
-          \ ]
-        call writefile(options, g:save_window_file)
-    endfunction
-augroup END
+set background=dark
 
-if filereadable(g:save_window_file)
-    execute 'source' g:save_window_file
-endif
-
-colorscheme molokai
-source $HOME/.vim/dein/repos/github.com/sago35/mark.vim/plugin/mark.vim
+colorscheme kalisi

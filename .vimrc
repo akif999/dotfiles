@@ -85,14 +85,28 @@ augroup HighlightTrailingSpaces
   autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 augroup END
 
+" git-bash
+function Bash()
+    silent! terminal ++close "c:\Program Files\Git\bin\bash.exe"
+    set wfh
+endfunction
+command! Bash call Bash()
+" cmd.exe
+function Cmd()
+    silent! terminal
+    set wfh
+endfunction
+command! Cmd call Cmd()
+
 " Cache "
 set directory=~/.vim/cache/swap
 set backupdir=~/.vim/cache/backup
 set undodir=~/.vim/cache/undo
 
 " formatter options
-" vim-go "
-let g:go_fmt_command="goimports"
+" vim-goimports "
+" (default)
+" let g:goimports=1
 " rust.vim "
 let g:rustfmt_autosave=1
 
@@ -104,35 +118,46 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 :command Csa cscope add cscope.out
 
 " vim-lsp
-" if executable('clangd')
-"     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'clangd',
-"         \ 'cmd': {server_info->['clangd', '-background-index']},
-"         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-"         \})
-" endif
+let g:lsp_settings = {
+\   'pyls-all': {
+\       'workspace_config': {
+\           'pyls': {
+\                'configurationSources': ['flake8']
+\            }
+\       }
+\   },
+\  "go": {
+\    "gopls": {
+\      "initialization_options": {
+\        "analyses" : {"fillstruct":v:false},
+\        "staticcheck": v:true,
+\        "directoryFilters": [
+\          "-debug"
+\        ],
+\        "completeUnimported": v:true, "usePlaceholders": v:true,
+\        "matcher": "fuzzy",
+\        "codelenses": {
+\          "gc_details": v:false,
+\          "generate": v:true,
+\          "test": v:true,
+\          "tidy": v:true,
+\          "vendor": v:false
+\        },
+\        "hoverKind": "SynopsisDocumentation"
+\      }
+\    }
+\  }
+\}
 
-" lsp for Go
-" if executable('gopls')
-"     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'gopls',
-"         \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
-"         \ 'whitelist': ['go'],
-"         \ })
-"     autocmd BufWritePre *.go LspDocumentFormatSync
-" endif
-
-" if executable('go-langserver')
-"     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'go-langserver',
-"         \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
-"         \ 'whitelist': ['go'],
-"         \ })
-" endif
-
+autocmd BufWritePre *.py LspDocumentFormatSync
+" autocmd BufWritePre *.go silent !goimports -w expand("%")
 
 " fzf
 let g:fzf_preview_window=""
+
+" ctrlp
+let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+let g:ctrlp_switch_buffer = 0
 
 call plug#begin('~/.vim/plugged')
 
@@ -142,10 +167,12 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 " Plug 'fatih/vim-go'
 Plug 'tpope/vim-fugitive'
-Plug 'derekwyatt/vim-scala'
-Plug 'rust-lang/rust.vim'
+Plug 'rbong/vim-flog'
+" Plug 'derekwyatt/vim-scala'
+" Plug 'rust-lang/rust.vim'
 Plug 'sago35/mark.vim'
-Plug 'zah/nim.vim'
+Plug 'sago35/tinygo.vim'
+" Plug 'zah/nim.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install -all' }
 Plug 'itchyny/lightline.vim'
@@ -160,5 +187,9 @@ Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'buoto/gotests-vim'
+Plug 'ziglang/zig.vim'
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/ctrlp-matchfuzzy'
 
 call plug#end()
