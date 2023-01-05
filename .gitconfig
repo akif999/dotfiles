@@ -1,0 +1,11 @@
+[user]
+	name = akif999
+	email = aki01nf28@gmail.com
+[core]
+	editor = gvim
+[alias]
+	st = stash
+	sw = switch
+	cm = commit
+	rb = rebase
+	co = checkout
