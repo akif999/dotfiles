@@ -36,6 +36,9 @@ set smartcase
 set wrapscan
 set incsearch
 
+" Import another vimrc"
+source ~/go.vimrc
+
 " Keybind "
 nmap <ESC><ESC> :nohlsearch<cr>
 
@@ -159,6 +162,9 @@ let g:fzf_preview_window=""
 let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 let g:ctrlp_switch_buffer = 0
 
+" vaffle
+let g:vaffle_show_hidden_files = 1
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/unite.vim'
@@ -188,6 +194,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'buoto/gotests-vim'
 Plug 'ziglang/zig.vim'
+Plug 'AndrewRadev/linediff.vim'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/ctrlp-matchfuzzy'
