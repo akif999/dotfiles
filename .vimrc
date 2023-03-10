@@ -57,6 +57,8 @@ nmap <A-2> :GFiles<cr>
 nmap <A-3> :Buffers<cr>
 
 nmap <F1> :Unite file_mru<cr>
+nmap <F9> :Git log --graph<cr>
+nmap <F10> :Git log --graph --all<cr>
 
  " vim-lsp
 function! s:on_lsp_buffer_enabled() abort
