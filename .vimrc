@@ -122,6 +122,25 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 :command Csk cscope kill 0
 :command Csa cscope add cscope.out
 
+" [32;2u
+" imap <S-Space> <Space>
+tnoremap <S-Space> <Space>
+
+" lightline
+
+let g:lightline = {
+\   'active': {
+\       'left': [ [ 'mode', 'paste' ],
+\                 [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+\   },
+\   'inactive': {
+\       'left': [ [ 'relativepath' ] ]
+\   },
+\   'component_function': {
+\       'gitbranch': 'FugitiveHead'
+\   }
+\}
+
 " vim-lsp
 let g:lsp_settings = {
 \   'pyls-all': {

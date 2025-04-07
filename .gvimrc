@@ -35,4 +35,5 @@ set hlsearch
 
 set background=dark
 
-colorscheme kalisi
+" colorscheme kalisi
+colorscheme github
