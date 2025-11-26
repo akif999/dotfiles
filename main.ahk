@@ -120,12 +120,12 @@ return
 
 ; year month day
 !s::
-    IfWinActive ChildView; RemoteView
+;    IfWinActive ChildView; RemoteView
       Formattime,Timestring,,yyyy/MM/dd
       Send,%TimeString%
       Return
 !y::
-    IfWinActive ChildView; RemoteView
+;    IfWinActive ChildView; RemoteView
       Formattime,Timestring,,yyyyMMdd
       Send,%TimeString%
       Return
