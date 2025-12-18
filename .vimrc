@@ -1,4 +1,3 @@
-" Encoding, Format "
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,cp932
 scriptencoding utf-8
@@ -11,7 +10,6 @@ set belloff=all
 
 set termwinsize=12x900
 
-" Edits "
 syntax on
 
 set title
@@ -27,19 +25,13 @@ set number
 set list
 set listchars=tab:>-,extends:<
 
-" Diffopttion "
 set diffopt=filler,context:10000,vertical,internal
 
-" Search "
 set ignorecase
 set smartcase
 set wrapscan
 set incsearch
 
-" Import another vimrc"
-source ~/go.vimrc
-
-" Keybind "
 nmap <ESC><ESC> :nohlsearch<cr>
 
 nmap <DOWN>  :cnext<cr>
@@ -60,28 +52,13 @@ nmap <F1> :Unite file_mru<cr>
 nmap <F9> :Git log --graph<cr>
 nmap <F10> :Git log --graph --all<cr>
 
- " vim-lsp
-function! s:on_lsp_buffer_enabled() abort
-  setlocal omnifunc=lsp#complete
-  setlocal signcolumn=yes
-  nmap <C-]> :LspDefinition<cr>
-  nmap <M-h> :LspHover<cr>
-  nmap <M-n> :LspNextError<cr>
-  nmap <M-p> :LspPreviousError<cr>
-endfunction
+set directory=~/.vim/cache/swap
+set backupdir=~/.vim/cache/backup
+set undodir=~/.vim/cache/undo
 
-augroup lsp_install
-  au!
-  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
-
-let g:lsp_diagnostics_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 1
-let g:asyncomplete_popup_delay = 1
-let g:lsp_text_edit_enabled = 1
+" [32;2u
+" imap <S-Space> <Space>
+tnoremap <S-Space> <Space>
 
 " Highlight endspace "
 augroup HighlightTrailingSpaces
@@ -90,12 +67,8 @@ augroup HighlightTrailingSpaces
   autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 augroup END
 
-" git-bash
-function Bash()
-    silent! terminal ++close "c:\Program Files\Git\bin\bash.exe"
-    set wfh
-endfunction
-command! Bash call Bash()
+source ~/lightline.vimrc
+
 " cmd.exe
 function Cmd()
     silent! terminal
@@ -103,16 +76,13 @@ function Cmd()
 endfunction
 command! Cmd call Cmd()
 
-" Cache "
-set directory=~/.vim/cache/swap
-set backupdir=~/.vim/cache/backup
-set undodir=~/.vim/cache/undo
+" git-bash
+function Bash()
+    silent! terminal ++close "c:\Program Files\Git\bin\bash.exe"
+    set wfh
+endfunction
+command! Bash call Bash()
 
-" formatter options
-" vim-goimports "
-" (default)
-" let g:goimports=1
-" rust.vim "
 let g:rustfmt_autosave=1
 
 " cscope options
@@ -121,60 +91,6 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 :command Csu !cscope -Rb
 :command Csk cscope kill 0
 :command Csa cscope add cscope.out
-
-" [32;2u
-" imap <S-Space> <Space>
-tnoremap <S-Space> <Space>
-
-" lightline
-
-let g:lightline = {
-\   'active': {
-\       'left': [ [ 'mode', 'paste' ],
-\                 [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-\   },
-\   'inactive': {
-\       'left': [ [ 'relativepath' ] ]
-\   },
-\   'component_function': {
-\       'gitbranch': 'FugitiveHead'
-\   }
-\}
-
-" vim-lsp
-let g:lsp_settings = {
-\   'pyls-all': {
-\       'workspace_config': {
-\           'pyls': {
-\                'configurationSources': ['flake8']
-\            }
-\       }
-\   },
-\  "go": {
-\    "gopls": {
-\      "initialization_options": {
-\        "analyses" : {"fillstruct":v:false},
-\        "staticcheck": v:true,
-\        "directoryFilters": [
-\          "-debug"
-\        ],
-\        "completeUnimported": v:true, "usePlaceholders": v:true,
-\        "matcher": "fuzzy",
-\        "codelenses": {
-\          "gc_details": v:false,
-\          "generate": v:true,
-\          "test": v:true,
-\          "tidy": v:true,
-\          "vendor": v:false
-\        },
-\        "hoverKind": "SynopsisDocumentation"
-\      }
-\    }
-\  }
-\}
-
-autocmd BufWritePre *.py LspDocumentFormatSync
-" autocmd BufWritePre *.go silent !goimports -w expand("%")
 
 " fzf
 let g:fzf_preview_window=""
@@ -185,6 +101,9 @@ let g:ctrlp_switch_buffer = 0
 
 " vaffle
 let g:vaffle_show_hidden_files = 1
+
+source ~/go.vimrc
+source ~/vim-lsp.vimrc
 
 call plug#begin('~/.vim/plugged')
 
