@@ -1,8 +1,8 @@
-ï»¿#SingleInstance force
+#SingleInstance force
 SetWorkingDir,%A_ScriptDir%
 #Include %A_ScriptDir%
 
-; tile ã¯å…ˆé ­ã¸å±•é–‹ã—ãªã‘ã‚Œã°å‹•ä½œã—ãªã„ãŸã‚æ³¨æ„
+; tile ‚Íæ“ª‚Ö“WŠJ‚µ‚È‚¯‚ê‚Î“®ì‚µ‚È‚¢‚½‚ß’ˆÓ
 #Include tile.ahk
 
 ; Enter
@@ -71,7 +71,7 @@ return
 sc07B & Tab::ToggleApp()
 #Include toggle_app.ahk
 
-; æ¨™æº–é–¢æ•°
+; •W€ŠÖ”
 TimedTrayTip(title, text, time) {
     TrayTip
     TrayTip, %title%, %text%
@@ -93,7 +93,7 @@ ResizeCurrentWindow(w_ofs, h_ofs) {
     WinMove, A, , X, Y, Width + w_ofs, Height + h_ofs
 }
 
-; å®šæœŸå‡¦ç†
+; ’èŠúˆ—
 SetTimer, PeriodicProcess500ms, 500
 
 PeriodicProcess500ms:
@@ -120,7 +120,7 @@ PeriodicProcess1hour(h, m, s) {
 
 PeriodicProcess1min(h, m, s) {
     if (h == 12 && m == 30) {
-        ; ä¾‹) æ¯æ—¥12:30ã«å®šæœŸå®Ÿè¡Œã™ã‚‹
+        ; —á) –ˆ“ú12:30‚É’èŠúÀs‚·‚é
     }
 }
 
