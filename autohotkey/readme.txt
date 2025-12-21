@@ -1,0 +1,1 @@
+main.ahk is starting from Task scheduler
