@@ -1,0 +1,4 @@
+[wsl2]
+kernel=C:\\wslkernel\\kernel-5.19-can
+localhostForwarding=true
+swap=0

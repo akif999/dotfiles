@@ -1,0 +1,20 @@
+{
+    "python.defaultInterpreterPath": "C:\\Users\\aki01\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "python.formatting.provider": "autopep8",
+    "[python]": {
+        "editor.defaultFormatter": null,
+        "editor.formatOnSave": true
+    },
+    "window.zoomLevel": 1,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#c979f7",
+        "editor.selectionHighlightBackground": "#394185",
+        "editor.findMatchHighlightBackground": "#264eff",
+        "editor.findMatchBorder": "#ffffff",
+        "editor.findMatchBackGround": "#ae00ff",
+    },
+    "editor.wordWrap": "on",
+    "workbench.colorTheme": "Visual Studio 2017 Light - C++",
+    "haskell.manageHLS": "GHCup"
+}
