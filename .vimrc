@@ -117,7 +117,7 @@ Plug 'rbong/vim-flog'
 " Plug 'derekwyatt/vim-scala'
 " Plug 'rust-lang/rust.vim'
 Plug 'sago35/mark.vim'
-Plug 'sago35/tinygo.vim'
+Plug 'sago35/tinygo.vim', { 'branch': 'main' }
 " Plug 'zah/nim.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install -all' }
