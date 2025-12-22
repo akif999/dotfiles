@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-12-21T16:43:18.987-00:00",
+	"CreationDate" : "2025-12-22T13:57:20.077-00:00",
 	"Sources" : 
 	[
 		{
@@ -131,6 +131,9 @@
 				},
 				{
 					"PackageIdentifier" : "Xmind.Xmind"
+				},
+				{
+					"PackageIdentifier" : "tinygo-org.tinygo"
 				},
 				{
 					"PackageIdentifier" : "Python.Python.3.13"
