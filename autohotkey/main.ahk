@@ -1,3 +1,4 @@
+#Requires AutoHotkey v1.0
 #SingleInstance force
 SetWorkingDir,%A_ScriptDir%
 #Include %A_ScriptDir%
