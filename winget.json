@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-12-22T13:57:20.077-00:00",
+	"CreationDate" : "2025-12-26T00:46:17.440-00:00",
 	"Sources" : 
 	[
 		{
@@ -10,49 +10,13 @@
 					"PackageIdentifier" : "7zip.7zip"
 				},
 				{
-					"PackageIdentifier" : "AutoHotkey.AutoHotkey"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.OneDrive"
+					"PackageIdentifier" : "Git.Git"
 				},
 				{
 					"PackageIdentifier" : "VideoLAN.VLC"
 				},
 				{
-					"PackageIdentifier" : "WinMerge.WinMerge"
-				},
-				{
-					"PackageIdentifier" : "e2eSoft.iVCam"
-				},
-				{
-					"PackageIdentifier" : "ArduinoSA.IDE.stable"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
-				},
-				{
-					"PackageIdentifier" : "StrawberryPerl.StrawberryPerl"
-				},
-				{
-					"PackageIdentifier" : "Apple.Bonjour"
-				},
-				{
-					"PackageIdentifier" : "Google.GoogleDrive"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2005.x64"
-				},
-				{
-					"PackageIdentifier" : "Kitware.CMake"
-				},
-				{
-					"PackageIdentifier" : "Oracle.JavaRuntimeEnvironment"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.msodbcsql.17"
-				},
-				{
-					"PackageIdentifier" : "Adobe.Acrobat.Reader.64-bit"
+					"PackageIdentifier" : "vim.vim"
 				},
 				{
 					"PackageIdentifier" : "NickeManarin.ScreenToGif"
@@ -61,25 +25,52 @@
 					"PackageIdentifier" : "GoLang.Go"
 				},
 				{
-					"PackageIdentifier" : "Anysphere.Cursor"
+					"PackageIdentifier" : "StrawberryPerl.StrawberryPerl"
 				},
 				{
-					"PackageIdentifier" : "OpenJS.NodeJS.22"
+					"PackageIdentifier" : "Microsoft.msodbcsql.17"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
+				},
+				{
+					"PackageIdentifier" : "RaspberryPiFoundation.RaspberryPiImager"
+				},
+				{
+					"PackageIdentifier" : "Apple.Bonjour"
+				},
+				{
+					"PackageIdentifier" : "ArduinoSA.IDE.stable"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.WebDeploy"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
+					"PackageIdentifier" : "Google.GoogleDrive"
 				},
 				{
-					"PackageIdentifier" : "Google.Chrome.EXE"
+					"PackageIdentifier" : "Oracle.JavaRuntimeEnvironment"
+				},
+				{
+					"PackageIdentifier" : "voidtools.Everything"
+				},
+				{
+					"PackageIdentifier" : "Adobe.Acrobat.Reader.64-bit"
+				},
+				{
+					"PackageIdentifier" : "OpenJS.NodeJS.22"
+				},
+				{
+					"PackageIdentifier" : "Kitware.CMake"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2005.x64"
 				},
 				{
 					"PackageIdentifier" : "Graphviz.Graphviz"
 				},
 				{
-					"PackageIdentifier" : "KiCad.KiCad"
+					"PackageIdentifier" : "LLVM.LLVM"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.Edge"
@@ -88,43 +79,52 @@
 					"PackageIdentifier" : "TeraTermProject.teraterm"
 				},
 				{
-					"PackageIdentifier" : "Ultimaker.Cura"
-				},
-				{
 					"PackageIdentifier" : "WiresharkFoundation.Wireshark"
 				},
 				{
-					"PackageIdentifier" : "WinSCP.WinSCP"
+					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
 				},
 				{
 					"PackageIdentifier" : "Yamaha.SteinbergUSBDriver"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
-					"PackageIdentifier" : "Python.Launcher"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22000"
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
-					"PackageIdentifier" : "Discord.Discord"
+					"PackageIdentifier" : "Microsoft.DotNet.Framework.DeveloperPack.4.6"
 				},
 				{
-					"PackageIdentifier" : "LLVM.LLVM"
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
 				},
 				{
-					"PackageIdentifier" : "RaspberryPiFoundation.RaspberryPiImager"
+					"PackageIdentifier" : "Python.Launcher"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22000"
+				},
+				{
+					"PackageIdentifier" : "AutoHotkey.AutoHotkey"
+				},
+				{
+					"PackageIdentifier" : "Google.Chrome.EXE"
+				},
+				{
+					"PackageIdentifier" : "KiCad.KiCad"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.OneDrive"
+				},
+				{
+					"PackageIdentifier" : "WinMerge.WinMerge"
 				},
 				{
 					"PackageIdentifier" : "Zoom.Zoom.EXE"
@@ -136,19 +136,22 @@
 					"PackageIdentifier" : "tinygo-org.tinygo"
 				},
 				{
+					"PackageIdentifier" : "WinSCP.WinSCP"
+				},
+				{
 					"PackageIdentifier" : "Python.Python.3.13"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudioCode"
 				},
 				{
+					"PackageIdentifier" : "Anysphere.Cursor"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.Teams"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.AppInstaller"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.UI.Xaml.2.7"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.UI.Xaml.2.8"
