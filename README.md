@@ -33,3 +33,5 @@ is following
       * https://github.com/junegunn/vim-plug?tab=readme-ov-file
     * Installing colorscheme manually
       * https://github.com/rafi/awesome-vim-colorschemes
+  * Excel settings
+    * Installing Relaxtools manualy
