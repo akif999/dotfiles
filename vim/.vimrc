@@ -69,6 +69,14 @@ augroup END
 
 source ~/lightline.vimrc
 
+" reload vimrc
+command! VimReload
+    \ source $MYVIMRC
+    \ | if has('gui_running') && filereadable(expand('~/.gvimrc'))
+    \ |    source ~/.gvimrc
+    \ | source ~/.gvimrc
+    \ | endif
+
 " cmd.exe
 function Cmd()
     silent! terminal
