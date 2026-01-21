@@ -1,0 +1,8 @@
+CompileFlags:
+  Compiler: C:/Strawberry/c/bin/gcc.exe
+  Add:
+    - -target
+    - x86_64-w64-mingw32
+    - -Wall
+    - -IC:/Strawberry/c/include
+    - -IC:/Strawberry/c/lib/gcc/x86_64-w64-mingw32/13.2.0/include
