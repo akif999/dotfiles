@@ -1,4 +1,6 @@
 ; tile
+; 外付けディスプレイは内蔵ディスプレイの拡大率に従った動作となるため注意
+; 基本的に内蔵ディスプレイの拡大率は100%へ設定する必要がある
 SetTitleMatchMode, 2
 DetectHiddenWindows, On
 +#Left::
