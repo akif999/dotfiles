@@ -31,7 +31,16 @@ is following
     * Set .vimrcs to user directory
     * Installing vim-plug manually
       * https://github.com/junegunn/vim-plug?tab=readme-ov-file
+      * each server will be installed by `:LspinstallServer`
+      * `mattn/goimports` requires `goimports` command, so install manually
+        * `$ go install golang.org/x/tools/cmd/goimports@latest`
     * Installing colorscheme manually
       * https://github.com/rafi/awesome-vim-colorschemes
+  * Visual Studio Code settings
+    * (WIP)
   * Excel settings
     * Installing Relaxtools manualy
+      * check security settings in property of `relaxtools.xlam`
+  * Other settings
+    * pcd
+      * install `pcd.bat`
